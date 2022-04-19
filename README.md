@@ -53,7 +53,7 @@ If the proposed model is useful for your research, please consider citing
 ```bibtex
 @article{cao2022vdtr,
   title   = {VDTR: Video Deblurring with Transformer},
-  author  = {Mingdeng Cao, Yanbo Fan, Yong Zhang, Jue Wang, Yujiu Yang},
+  author  = {Mingdeng, Cao and Yanbo, Fan and Yong, Zhang and Jue, Wang and Yujiu Yang},
   journal = {arXiv:2204.08023},
   year    = {2022}
 }
