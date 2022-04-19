@@ -1,7 +1,10 @@
 # VDTR: Video Deblurring with Transformer
-Mingdeng Cao, Yanbo Fan, [Jiahao Wang](https://github.com/Wang-jiahao), [Yong Zhang](https://yzhang2016.github.io/yongnorriszhang.github.io/), [Jue Wang](https://juew.org/) and Yujiu Yang.
 
-We propose Video Deblurring Transformer (VDTR), a simple yet effective model that firstly takes advantage of the long-range and relation modeling characteristics of Transformer for video deblurring. VDTR utilize Transformer for both spatial and temporal modeling and obtaines highly competitive performance on the popular video deblurring benchmearks. Code will be public soon.
+[Mingdeng Cao](https://github.com/ljzycmd), [Yanbo Fan](https://sites.google.com/site/yanbofan0124/), [Yong Zhang](https://yzhang2016.github.io/yongnorriszhang.github.io/), [Jue Wang](https://juew.org/) and Yujiu Yang.
+
+[[arXiv](https://arxiv.org/abs/2204.08023)]
+
+We propose Video Deblurring Transformer (VDTR), a simple yet effective model that takes advantage of the long-range and relation modeling characteristics of Transformer for video deblurring. VDTR utilize Transformer for both spatial and temporal modeling and obtaines highly competitive performance on the popular video deblurring benchmearks. Code will be public soon.
 
 <div align=center> 
 <img src=./assets/deblur_demo.gif>
@@ -17,8 +20,7 @@ VDTR surpasses CNN-based state-of-the-art methods more than 1.5dB PSNR with mode
 </div>
 
 ---
-> Spatio-temporal learning is significant for video deblurring, which is dominated by convolution-based methods. This paper presents VDTR, an effective Transformer-based model that makes the first attempt to adapt Transformer for video deblurring. VDTR exploits the superior long-range and relation modeling capabilities of Transformer for both spatial and temporal modeling. However, it is challenging to design an appropriate Transformer-based model for video deblurring due to the high computational costs for high-resolution spatial mooodeling and the misalignment across frames for temporal modeling.
-To address these problems, VDTR advocates performing attention within non-overlapping windows and exploiting the hierarchical structure for long-range dependencies modeling. For frame-level spatial modeling, we propose an encoder-decoder Transformer that utilizes multi-scale features for deblurring. For multi-frame temporal modeling, we adapt Transformer to fuse multiple spatial features efficiently. Compared with CNN-based methods, the proposed method achieves highly competitive results on both synthetic and real-world video deblurring benchmarks, including DVD, GOPRO, REDS and BSD. We hope such a pure Transformer-based architecture can serve as a powerful alternative baseline for video deblurring and other video restoration tasks.
+> Spatio-temporal learning is significant for video deblurring, which is dominated by convolution-based methods. This paper presents VDTR, an effective Transformer-based model that makes the first attempt to adapt Transformer for video deblurring. VDTR exploits the superior long-range and relation modeling capabilities of Transformer for both spatial and temporal modeling. However, it is challenging to design an appropriate Transformer-based model for video deblurring due to the high computational costs for high-resolution spatial mooodeling and the misalignment across frames for temporal modeling. To address these problems, VDTR advocates performing attention within non-overlapping windows and exploiting the hierarchical structure for long-range dependencies modeling. For frame-level spatial modeling, we propose an encoder-decoder Transformer that utilizes multi-scale features for deblurring. For multi-frame temporal modeling, we adapt Transformer to fuse multiple spatial features efficiently. Compared with CNN-based methods, the proposed method achieves highly competitive results on both synthetic and real-world video deblurring benchmarks, including DVD, GOPRO, REDS and BSD. We hope such a pure Transformer-based architecture can serve as a powerful alternative baseline for video deblurring and other video restoration tasks.
 
 <div align=center> 
 <img src=./assets/model_arch.png>
@@ -27,7 +29,7 @@ Model Architecture
 
 ### Experimental Results
 
-VDTR achieves state-of-the-art PSNR and SSIM on both synthetic and real-world deblurring dataset.
+VDTR achieves competitive PSNR and SSIM on both synthetic and real-world deblurring dataset.
 
 **Quantitative results on popular video deblurring datasets: DVD, GOPRO, REDS**
 ![qualitative_comparison](./assets/results/results_on_synthetic_datasets.png)
@@ -45,4 +47,14 @@ VDTR achieves state-of-the-art PSNR and SSIM on both synthetic and real-world de
 <img src=./assets/results/vis_comparison_bsd.png>
 </div>
 
-### Acknowledgement
+### Citation
+If the proposed model is useful for your research, please consider citing
+
+```bibtex
+@article{cao2022vdtr,
+  title   = {VDTR: Video Deblurring with Transformer},
+  author  = {Mingdeng Cao, Yanbo Fan, Yong Zhang, Jue Wang, Yujiu Yang},
+  journal = {arXiv:2204.08023},
+  year    = {2022}
+}
+```
