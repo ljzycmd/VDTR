@@ -4,7 +4,7 @@
 
 [[arXiv](https://arxiv.org/abs/2204.08023)]
 
-We propose Video Deblurring Transformer (VDTR), a simple yet effective model that takes advantage of the long-range and relation modeling characteristics of Transformer for video deblurring. VDTR utilize Transformer for both spatial and temporal modeling and obtaines highly competitive performance on the popular video deblurring benchmearks. Code will be public soon.
+We propose Video Deblurring Transformer (VDTR), a simple yet effective model that takes advantage of the long-range and relation modeling characteristics of Transformer for video deblurring. VDTR utilizes pure Transformer for both spatial and temporal modeling and obtaines highly competitive performance on the popular video deblurring benchmearks. Code will be public soon.
 
 <div align=center> 
 <img src=./assets/deblur_demo.gif>
@@ -26,6 +26,41 @@ VDTR surpasses CNN-based state-of-the-art methods more than 1.5dB PSNR with mode
 <img src=./assets/model_arch.png>
 Model Architecture
 </div>
+
+### Environment
+* Python 3.8
+* PyTorch >= 1.5
+```bash
+git clone  git clone https://github.com/ljzycmd/SimDeblur.git
+
+# install the SimDeblur
+cd SimDeblur
+bash Install.sh
+```
+
+### Quick Start
+
+1. Clone the codes of VDTR
+```bash
+git clone https://github.com/ljzycmd/VDTR.git
+```
+
+2. Download and unzip the datasets
+* [DVD](http://www.cs.ubc.ca/labs/imager/tr/2017/DeepVideoDeblurring/)
+* [GOPRO](https://seungjunnah.github.io/Datasets/gopro)
+Then create the soft link of the datasets to the **./datasets** folder.
+
+3. Run the training script
+```bash
+CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch --nproc_per_node=4 --master_port=10086 train.py ./configs/vdtr/vdtr_dvd.yaml --gpus=4
+```
+the training logs are saved in ./workdir/*
+
+4. Run the testing script (single GPU)
+```bash
+python test.py ./configs/vdtr/vdtr_dvd.yaml $Checkpoint_path
+```
+the testing logs and frames are saved in ./workdir/*.
 
 ### Experimental Results
 

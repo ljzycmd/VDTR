@@ -1,0 +1,61 @@
+name: 001_VDTR_C128R10_lr4e4_DVD_e2001_B8G8_s
+
+__base_cfg__: ./../base_gopro.yaml
+
+dataset:
+    train:
+        loader:
+            batch_size: 8
+            num_workers: 8
+
+meta_arch: SingleScalePlainCNN
+model:
+    name: VDTR
+    in_channels: 3
+    inner_channels: 128
+    num_frames: 5
+    patch_size: 4
+    cnn_patch_embedding: False
+    patch_embedding_size: 4
+    num_layer_rec: 10
+    temporal_patchsize: 4
+    num_heads: 8
+    dropout: 0.0
+    ffn_dim: None
+    ms_fuse: True
+
+loss: 
+    criterion:
+    - name: CharbonnierLoss
+    - name: PerceptualLossVGG19
+    
+    weights: 
+    - 1.0
+    - 0.0001
+
+schedule:
+    epochs: 2001
+    val_epochs: 20
+    
+    optimizer:
+        name: "Adam"
+        lr: 0.0004
+        betas: [0.9, 0.99]
+        weight_decay: 0
+        
+    lr_scheduler:
+        name: CosineAnnealingLR_Restart
+        T_period: [1000, 1001]
+        restarts: [1000]
+        weights: [1]
+
+logging: 
+    period: 20
+
+ckpt:
+    period: 20
+
+
+work_dir: ./workdir/vdtr
+resume_from: None
+init_mode: True
