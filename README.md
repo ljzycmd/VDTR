@@ -64,8 +64,8 @@ the testing logs and frames are saved in `./workdir/*`.
 
 | Model  | Dataset | Download |
 |:------:|:------:|:--------:|
-|  VDTR  | DVD | [Google drive]() |
-|  VDTR  | GOPRO | [Google drive]()|
+|  VDTR  | DVD | [Google drive](https://drive.google.com/file/d/1wNukRvhBcfG2KlU8WUzcCxhSKLvjpIEw/view?usp=sharing) |
+|  VDTR  | GOPRO | [Google drive](https://drive.google.com/file/d/1zmAmjOa0sdXl0rNWxB6tF7QlDYuQpqDg/view?usp=sharing)|
 
 ### Experimental Results
 
