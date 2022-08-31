@@ -1,10 +1,8 @@
 """ ************************************************
 * fileName: dbtrans_v2.py
-* desc: video deblurring with transformer version 2
+* desc: video deblurring with transformer
 * author: mingdeng_cao
 * date: 2021/04/09 16:41
-* last revised: 2021.7.29 add pwcnet for multi-frame
-                          alignment. 
 ************************************************ """
 
 import math

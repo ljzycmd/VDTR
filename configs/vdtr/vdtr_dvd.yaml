@@ -1,4 +1,4 @@
-name: 001_VDTR_C128R10_lr4e4_DVD_e2001_B8G8_s
+name: 001_VDTR_C256R20_lr4e4_DVD_e2001_B8G8_s
 
 __base_cfg__: ./../base_dvd.yaml
 
@@ -17,12 +17,12 @@ meta_arch: SingleScalePlainCNN
 model:
     name: VDTR
     in_channels: 3
-    inner_channels: 128
+    inner_channels: 256
     num_frames: 5
     patch_size: 4
     cnn_patch_embedding: False
     patch_embedding_size: 4
-    num_layer_rec: 10
+    num_layer_rec: 20
     temporal_patchsize: 4
     num_heads: 8
     dropout: 0.0

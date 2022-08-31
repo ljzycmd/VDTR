@@ -48,7 +48,7 @@ git clone https://github.com/ljzycmd/VDTR.git
 2. Download and unzip the datasets
 * [DVD](http://www.cs.ubc.ca/labs/imager/tr/2017/DeepVideoDeblurring/)
 * [GOPRO](https://seungjunnah.github.io/Datasets/gopro)
-Then create the soft link of the datasets to the **./datasets** folder.
+Then create the soft link of the datasets to the `./datasets` folder.
 
 3. Run the training script
 ```bash
@@ -60,7 +60,12 @@ the training logs are saved in ./workdir/*
 ```bash
 python test.py ./configs/vdtr/vdtr_dvd.yaml $Checkpoint_path
 ```
-the testing logs and frames are saved in ./workdir/*.
+the testing logs and frames are saved in `./workdir/*`.
+
+| Model  | Dataset | Download |
+|:------:|:------:|:--------:|
+|  VDTR  | DVD | [Google drive]() |
+|  VDTR  | GOPRO | [Google drive]()|
 
 ### Experimental Results
 
