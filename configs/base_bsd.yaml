@@ -1,0 +1,64 @@
+dataset:
+    train:
+        name: BSD
+        mode: train
+        
+        sampling: n_c  # "n_n" and "n_c" , "n_l", "n_r"
+        overlapping: True
+        interval: 1
+        
+        root_gt: ./datasets/BSD/BSD_3ms24ms/train
+        data_type: "imgs"
+        num_frames: 5
+        
+        # augmentations
+        augmentation:
+            RandomCrop: 
+                size : [256, 256]
+            RandomHorizontalFlip: 
+                p: 0.5
+            RandomVerticalFlip: 
+                p: 0.5
+            RandomRotation90: 
+                p: 0.5
+            # RandomReverse: 
+            #     p: 0.5
+        # dataloader per GPU
+        loader:
+            batch_size: 8
+            num_workers: 8
+            
+
+    val:
+        name: BSD
+        mode: val
+        
+        sampling: n_c  # "n_n" and "n_c" , "n_l", "n_r"
+        overlapping: True
+        interval: 1
+        
+        root_gt: ./datasets/BSD/BSD_3ms24ms/valid
+        data_type: "imgs"
+        num_frames: 5
+
+        loader:
+            batch_size: 1
+            num_workers: 1
+    
+    test:
+        name: BSD
+        mode: val
+        
+        sampling: n_c  # "n_n" and "n_c" , "n_l", "n_r"
+        overlapping: True
+        interval: 1
+        
+        root_gt: ./datasets/BSD/BSD_3ms24ms/valid
+        data_type: "imgs"
+        num_frames: 5
+
+        loader:
+            batch_size: 1
+            num_workers: 1
+
+meta_arch: "SingleScalePlainCNN"

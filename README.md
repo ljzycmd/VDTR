@@ -2,6 +2,8 @@
 
 [Mingdeng Cao](https://github.com/ljzycmd), [Yanbo Fan](https://sites.google.com/site/yanbofan0124/), [Yong Zhang](https://yzhang2016.github.io/yongnorriszhang.github.io/), [Jue Wang](https://juew.org/) and Yujiu Yang.
 
+---
+
 [[arXiv](https://arxiv.org/abs/2204.08023)]
 
 We propose Video Deblurring Transformer (VDTR), a simple yet effective model that takes advantage of the long-range and relation modeling characteristics of Transformer for video deblurring. VDTR utilizes pure Transformer for both spatial and temporal modeling and obtaines highly competitive performance on the popular video deblurring benchmearks. Code will be public soon.
@@ -46,27 +48,36 @@ git clone https://github.com/ljzycmd/VDTR.git
 ```
 
 2. Download and unzip the datasets
+
 * [DVD](http://www.cs.ubc.ca/labs/imager/tr/2017/DeepVideoDeblurring/)
+
 * [GOPRO](https://seungjunnah.github.io/Datasets/gopro)
-Then create the soft link of the datasets to the `./datasets` folder.
+
+* [BSD](https://github.com/zzh-tech/ESTRNN)
+
+Then create the soft links of the datasets to the `./datasets` folder.
 
 3. Run the training script
+
 ```bash
 CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch --nproc_per_node=4 --master_port=10086 train.py ./configs/vdtr/vdtr_dvd.yaml --gpus=4
 ```
 the training logs are saved in ./workdir/*
 
 4. Run the testing script (single GPU)
+
 ```bash
 python test.py ./configs/vdtr/vdtr_dvd.yaml $Checkpoint_path
 ```
-the testing logs and frames are saved in `./workdir/*`.
+the testing logs and frames are saved in `./workdir/*`. Pretrained checkpoints are listed:
 
 | Model  | Dataset | Download |
 |:------:|:------:|:--------:|
 |  VDTR  | DVD | [Google drive](https://drive.google.com/file/d/1wNukRvhBcfG2KlU8WUzcCxhSKLvjpIEw/view?usp=sharing) |
 |  VDTR  | GOPRO | [Google drive](https://drive.google.com/file/d/1zmAmjOa0sdXl0rNWxB6tF7QlDYuQpqDg/view?usp=sharing)|
-
+|  VDTR  | BSD-1ms | [Goodle drive](https://drive.google.com/file/d/1W5z2b6k3iEA0qS3Ytvt_4893_tbklPBD/view?usp=share_link) |
+|  VDTR  | BSD-2ms | [Goodle drive](https://drive.google.com/file/d/1w1bUjDV8OoT8s89BE0_rdbwAQjcre8_F/view?usp=share_link) |
+|  VDTR  | BSD-3ms | [Goodle drive](https://drive.google.com/file/d/1yt2_28LlWHwB32_QrouIOtWLk5xVJkOH/view?usp=share_link) |
 ### Experimental Results
 
 VDTR achieves competitive PSNR and SSIM on both synthetic and real-world deblurring dataset.
@@ -88,6 +99,7 @@ VDTR achieves competitive PSNR and SSIM on both synthetic and real-world deblurr
 </div>
 
 ### Citation
+
 If the proposed model is useful for your research, please consider citing
 
 ```bibtex

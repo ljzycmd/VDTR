@@ -38,7 +38,7 @@ schedule:
     val_epochs: 20
     
     optimizer:
-        name: "Adam"
+        name: Adam
         lr: 0.0004
         betas: [0.9, 0.99]
         weight_decay: 0

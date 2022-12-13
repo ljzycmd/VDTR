@@ -1,17 +1,15 @@
-name: 001_VDTR_C256R20_lr4e4_DVD_e2001_B8G8_s
+name: 000_VDTR_C256R20_lr4e4_BSD2ms_e2001_B8G8_s
 
-__base_cfg__: ./../base_dvd.yaml
+__base_cfg__: ./../base_bsd.yaml
 
 dataset:
     train:
-        num_frames: 5
+        root_gt: ./datasets/BSD/BSD_2ms16ms/train
         loader:
             batch_size: 4
             num_workers: 4
-
     val:
-        num_frames: 5
-
+        root_gt: ./datasets/BSD/BSD_2ms16ms/test
 
 meta_arch: SingleScalePlainCNN
 model:
