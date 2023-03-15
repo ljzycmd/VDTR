@@ -64,12 +64,14 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch --nproc_per_node
 ```
 the training logs are saved in ./workdir/*
 
-4. Run the testing script (single GPU)
+4. Run the testing script (single GPU, minimum requirement RTX 2080Ti)
 
 ```bash
 python test.py ./configs/vdtr/vdtr_dvd.yaml $Checkpoint_path
 ```
-the testing logs and frames are saved in `./workdir/*`. Pretrained checkpoints are listed:
+the testing logs and frames are saved in `./workdir/*`. 
+
+**Pretrained checkpoints are listed:**
 
 | Model  | Dataset | Download |
 |:------:|:------:|:--------:|
